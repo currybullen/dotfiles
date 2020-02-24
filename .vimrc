@@ -20,6 +20,8 @@ call plug#end()
 
 " Plugin specific options
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " Use after
+" next release
 
 " Looks
 set cursorline
@@ -62,8 +64,10 @@ set splitbelow
 set splitright
 
 " Navigation
+" Use FZF instead of gb?
 nnoremap gb :ls<CR>:b<Space>
 nnoremap gx :ls<CR>:bd<Space>
+" Use FZF instead of recent?
 command -nargs=? Recent :browse filter /<args>/ oldfiles
 
 " Wrapping
@@ -77,6 +81,7 @@ set complete-=i " Do not look through included files when completing
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+ " Chars to display when running :list
 setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags file
 set pastetoggle=<F2> " Toggles paste option
+set display+=lastline " @@@ ends long lines
 
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']

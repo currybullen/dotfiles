@@ -78,6 +78,12 @@ fzfv() { vim $(fzfb) < /dev/tty ; }
 fzfr() { vim $(rg --files-with-matches "$@" | fzfb) < /dev/tty ; }
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias gd='git diff --color=always'
+alias gl='git log'
+alias gs='git status'
+alias gb='git branch'
+gr() { cd $(git rev-parse --show-toplevel); }
+
 # Key bindings
 if [ -f /etc/fedora-release ]; then
 	. /usr/share/fzf/shell/key-bindings.bash
