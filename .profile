@@ -7,8 +7,8 @@ appendpath () {
     esac
 }
 
-if [ -f /home/$USER/.profile.$HOSTNAME ]; then
-	. /home/$USER/.profile.$HOSTNAME
+if [ -f ~/.profile.$HOSTNAME ]; then
+	. ~/.profile.$HOSTNAME
 fi
 
 export FZF_COMPLETION_TRIGGER='~~'
@@ -19,12 +19,12 @@ export BAT_PAGER="less -RF" # Probably only needed because of a bug
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
-appendpath "/home/$USER/scripts"
+appendpath "~/scripts"
 
 case $- in
     *i*)
-        if test "$BASH" && test -r /home/$USER/.bashrc; then
-            . /home/$USER/.bashrc
+        if test "$BASH" && test -r ~/.bashrc; then
+            . ~/.bashrc
         fi
         ;;
 esac

@@ -3,8 +3,8 @@
 # * Set git pager settings, change aliases accordingly
 # * Remove terminal color codes when bat 0.12.0 drops
 
-if [ -f /home/$USER/.bashrc.$HOSTNAME ]; then
-	. /home/$USER/.bashrc.$HOSTNAME
+if [ -f ~/.bashrc.$HOSTNAME ]; then
+	. ~/.bashrc.$HOSTNAME
 fi
 
 # Completion
@@ -41,7 +41,7 @@ function ret_color {
 PS1="\[$GY\][\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]] \[\$(ret_color)\]$\[$RE\] "
 
 # History
-HISTFILE=/home/$USER/.bash_history.$HOSTNAME
+HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
 HISTFILESIZE=10000
 HISTCONTROL=ignoredups:erasedups
