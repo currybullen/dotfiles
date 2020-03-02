@@ -3,7 +3,9 @@
 # * Set git pager settings, change aliases accordingly
 # * Remove terminal color codes when bat 0.12.0 drops
 
-. /home/$USER/.bashrc.$HOSTNAME
+if [ -f /home/$USER/.bashrc.$HOSTNAME ]; then
+	. /home/$USER/.bashrc.$HOSTNAME
+fi
 
 # Completion
 shopt -s no_empty_cmd_completion

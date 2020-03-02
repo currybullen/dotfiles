@@ -7,7 +7,9 @@ appendpath () {
     esac
 }
 
-. /home/$USER/.profile.$HOSTNAME
+if [ -f /home/$USER/.profile.$HOSTNAME ]; then
+	. /home/$USER/.profile.$HOSTNAME
+fi
 
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
