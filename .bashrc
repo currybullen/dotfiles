@@ -11,7 +11,7 @@ fi
 shopt -s no_empty_cmd_completion
 if [ -f /etc/fedora-release ]; then
 	. /etc/bash_completion.d/fzf
-elif [ -f /etc/debian_version]; then
+elif [ -f /etc/debian_version ]; then
 	. /usr/share/bash-completion/completions/fzf
 fi
 
@@ -22,7 +22,7 @@ shopt -s globstar
 # Prompt
 if [ -f /etc/fedora-release ]; then
 	. /usr/share/git-core/contrib/completion/git-prompt.sh
-elif [ -f /etc/debian_version]; then
+elif [ -f /etc/debian_version ]; then
 	. /usr/lib/git-core/git-sh-prompt
 fi
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -89,7 +89,7 @@ gr() { cd $(git rev-parse --show-toplevel); }
 # Key bindings
 if [ -f /etc/fedora-release ]; then
 	. /usr/share/fzf/shell/key-bindings.bash
-elif [ -f /etc/debian_version]; then
+elif [ -f /etc/debian_version ]; then
 	. /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
@@ -100,4 +100,9 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-_fzf_setup_completion path bat
+
+# Remove this when fedora gets FZF 0.19.0
+if [ -f /etc/fedora-release ]; then
+	_fzf_setup_completion path bat
+fi
+
