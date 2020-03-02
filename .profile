@@ -19,7 +19,7 @@ export BAT_PAGER="less -RF" # Probably only needed because of a bug
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
-appendpath "~/scripts"
+appendpath "$HOME/scripts"
 
 case $- in
     *i*)
