@@ -101,6 +101,14 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+ssh() {
+	if [ "$TERM" = tmux-256color ]; then
+		TERM=screen-256color command ssh "$@"
+	else
+		command ssh "$@"
+	fi
+}
+
 # Remove this when fedora gets FZF 0.19.0
 if [ -f /etc/fedora-release ]; then
 	_fzf_setup_completion path bat
