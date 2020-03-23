@@ -16,11 +16,11 @@ export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--multi'
 export EDITOR="$VISUAL"
-export MANROFFOPT="-c"
 
 if grep -q Fedora /etc/os-release; then
 	export BAT_PAGER="less -RF" # Probably only needed because of a bug
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+	export MANROFFOPT="-c"
 fi
 
 appendpath "$HOME/scripts"
