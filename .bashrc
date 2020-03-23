@@ -88,6 +88,8 @@ alias gb='git branch'
 alias gch='git checkout'
 alias ga='git add'
 alias vgs='vim -c ":Gstatus|:only"'
+alias gpl='git pull'
+alias gps='git push'
 gr() { cd $(git rev-parse --show-toplevel); }
 
 # Key bindings
