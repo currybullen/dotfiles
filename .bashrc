@@ -87,9 +87,19 @@ alias gs='git status'
 alias gb='git branch'
 alias gch='git checkout'
 alias ga='git add'
+alias gc='git commit'
 alias vgs='vim -c ":Gstatus|:only"'
 alias gpl='git pull'
 alias gps='git push'
+alias gcan='git commit --amend --no-edit'
+alias gsh='git show'
+alias gdi='git diff'
+fbr() {
+	local branches branch
+	branches=$(git --no-pager branch -vv) &&
+	branch=$(echo "$branches" | fzf +m) &&
+	git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
 gr() { cd $(git rev-parse --show-toplevel); }
 
 # Key bindings
