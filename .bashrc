@@ -122,7 +122,7 @@ _fzf_compgen_dir() {
 # Switch term type when SSHing from tmux
 ssh() {
 	if [ "$TERM" = tmux-256color ]; then
-		TERM=screen-256color command ssh "$@"
+		TERM=xterm-256color command ssh "$@"
 	else
 		command ssh "$@"
 	fi
