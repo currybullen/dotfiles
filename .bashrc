@@ -44,7 +44,7 @@ PS1="\[$GY\][\[$Y\]\A\[$GY\]] [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\
 # History
 HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
-HISTFILESIZE=10000
+HISTFILESIZE=1000000
 HISTCONTROL=ignoredups:erasedups
 HISTIGNORE='ls:clear'
 shopt -s histappend
