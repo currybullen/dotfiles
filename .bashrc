@@ -76,9 +76,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+# Maybe remove these in favor of Ctrl-T/~~<TAB>?
 fzfb() { fzf --preview "bat --color=always {} | head -500" ; }
 fzfv() { vim $(fzfb) < /dev/tty ; }
 fzfr() { vim $(rg --files-with-matches "$@" | fzfb) < /dev/tty ; }
+vrg() { vim -c "Rg $@"; }
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Git
@@ -100,6 +102,16 @@ fbr() {
 	branches=$(git --no-pager branch -vv) &&
 	branch=$(echo "$branches" | fzf +m) &&
 	git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+irg() {
+        local match path line
+        match=$(rg --color always --line-number "$@" \
+                | fzf --ansi --no-multi --delimiter=: --preview 'bat --color always {1} \
+                | head -500') && \
+        path=$(echo $match | awk --field-separator : '{print $1}') && \
+        line=$(echo $match | awk --field-separator : '{print $2}') && \
+        idea.sh --line $line "$path"
+	#TODO: Add something to focus IntelliJ
 }
 gr() { cd $(git rev-parse --show-toplevel); }
 
