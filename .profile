@@ -17,7 +17,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 export FZF_DEFAULT_OPTS="--multi \
 	--bind ctrl-u:preview-page-up \
 	--bind ctrl-d:preview-page-down"
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always {} | head -500'"
+export FZF_CTRL_T_OPTS="--preview 'bat --color always {} | head -500'"
 export EDITOR="$VISUAL"
 
 if grep -q Fedora /etc/os-release; then
