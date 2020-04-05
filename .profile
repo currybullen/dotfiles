@@ -27,6 +27,7 @@ if grep -q Fedora /etc/os-release; then
 fi
 
 appendpath "$HOME/scripts"
+appendpath "$HOME/IntelliJ/bin"
 
 case $- in
     *i*)
