@@ -38,7 +38,8 @@ RE='\e[0m'
 function ret_color { 
     [ $? = 0 ] && echo -e "$G" || echo -e "$R"
 }
-PS1="\[$GY\][\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]] \[\$(ret_color)\]$\[$RE\] "
+
+PS1="\[$GY\][\[$Y\]\A\[$GY\]] [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]]\n \[\$(ret_color)\]$\[$RE\] "
 
 # History
 HISTFILE=~/.bash_history.$HOSTNAME
