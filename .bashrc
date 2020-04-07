@@ -46,6 +46,7 @@ function ret_color {
 PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]]\n \[\$(ret_color)\]$\[$RE\] "
 
 # History
+HISTTIMEFORMAT="%d/%m/%y %T "
 HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
 HISTFILESIZE=1000000
