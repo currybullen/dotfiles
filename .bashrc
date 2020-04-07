@@ -3,6 +3,10 @@
 # * Set git pager settings, change aliases accordingly
 # * Remove terminal color codes when bat 0.12.0 drops
 
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 if [ -f ~/.bashrc.$HOSTNAME ]; then
 	. ~/.bashrc.$HOSTNAME
 fi
