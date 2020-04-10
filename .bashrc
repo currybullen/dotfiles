@@ -87,27 +87,8 @@ fzfv() { vim $(fzfb) < /dev/tty ; }
 fzfr() { vim $(rg --files-with-matches "$@" | fzfb) < /dev/tty ; }
 vrg() { vim -c "Rg $@"; }
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+. ~/.git_aliases
 
-# Git
-alias gd='git diff --color=always'
-alias gl='git log'
-alias gs='git status'
-alias gb='git branch'
-alias gch='git checkout'
-alias ga='git add'
-alias gc='git commit'
-alias vgs='vim -c ":Gstatus|:only"'
-alias gpl='git pull'
-alias gps='git push'
-alias gcan='git commit --amend --no-edit'
-alias gsh='git show'
-alias gdi='git diff'
-fbr() {
-	local branches branch
-	branches=$(git --no-pager branch -vv) &&
-	branch=$(echo "$branches" | fzf +m) &&
-	git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-}
 irg() {
         local match path line
         match=$(rg --color always --line-number "$@" \
@@ -118,7 +99,6 @@ irg() {
         idea.sh --line $line "$path"
 	#TODO: Add something to focus IntelliJ
 }
-gr() { cd $(git rev-parse --show-toplevel); }
 
 # Key bindings
 if [ -f /etc/fedora-release ]; then
