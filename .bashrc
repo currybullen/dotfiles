@@ -7,10 +7,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f ~/.bashrc.$HOSTNAME ]; then
-	. ~/.bashrc.$HOSTNAME
-fi
-
 # Completion
 shopt -s no_empty_cmd_completion
 if [ -f /etc/fedora-release ]; then
@@ -131,3 +127,6 @@ if [ -f /etc/fedora-release ]; then
 	_fzf_setup_completion path bat
 fi
 
+if [ -f ~/.bashrc.$HOSTNAME ]; then
+	. ~/.bashrc.$HOSTNAME
+fi
