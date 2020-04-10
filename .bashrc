@@ -9,22 +9,14 @@ fi
 
 # Completion
 shopt -s no_empty_cmd_completion
-if [ -f /etc/fedora-release ]; then
-	. /etc/bash_completion.d/fzf
-elif [ -f /etc/debian_version ]; then
-	. /usr/share/bash-completion/completions/fzf
-fi
+. /etc/bash_completion.d/fzf
 
 # Globbing
 shopt -s extglob
 shopt -s globstar
 
 # Prompt
-if [ -f /etc/fedora-release ]; then
-	. /usr/share/git-core/contrib/completion/git-prompt.sh
-elif [ -f /etc/debian_version ]; then
-	. /usr/lib/git-core/git-sh-prompt
-fi
+. /usr/share/git-core/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=0
@@ -97,11 +89,7 @@ irg() {
 }
 
 # Key bindings
-if [ -f /etc/fedora-release ]; then
-	. /usr/share/fzf/shell/key-bindings.bash
-elif [ -f /etc/debian_version ]; then
-	. /usr/share/doc/fzf/examples/key-bindings.bash
-fi
+. /usr/share/fzf/shell/key-bindings.bash
 
 # Use fd for path completion, include hidden
 _fzf_compgen_path() {
@@ -121,11 +109,6 @@ ssh() {
 		command ssh "$@"
 	fi
 }
-
-# Remove this when fedora gets FZF 0.19.0
-if [ -f /etc/fedora-release ]; then
-	_fzf_setup_completion path bat
-fi
 
 if [ -f ~/.bashrc.$HOSTNAME ]; then
 	. ~/.bashrc.$HOSTNAME
