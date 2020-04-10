@@ -60,6 +60,9 @@ man() {
 alias ls='ls --color'
 
 # Aliases
+if [[ ! -f /usr/bin/vim ]]; then
+	alias vim=vimx
+fi
 alias ll='ls -ahl'
 alias less='less -R'
 alias view='vim -R'
