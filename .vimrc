@@ -21,8 +21,7 @@ call plug#end()
 
 " Plugin specific options
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " Use after
-" next release
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " Uncomment on fzf 0.21
 
 " Looks
 set cursorline
@@ -83,6 +82,7 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+ " Chars to display whe
 setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags file
 set pastetoggle=<F2> " Toggles paste option
 set display+=lastline " @@@ ends long lines
+set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
