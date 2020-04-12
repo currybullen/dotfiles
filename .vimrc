@@ -21,7 +21,7 @@ call plug#end()
 
 " Plugin specific options
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " Uncomment on fzf 0.21
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " Uncomment on fzf 0.21
 
 " Looks
 set cursorline
