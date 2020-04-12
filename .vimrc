@@ -64,11 +64,8 @@ set splitbelow
 set splitright
 
 " Navigation
-" Use FZF instead of gb?
-nnoremap gb :ls<CR>:b<Space>
+nnoremap gb :Buffers<CR>:b<Space>
 nnoremap gx :ls<CR>:bd<Space>
-" Use FZF instead of recent?
-command -nargs=? Recent :browse filter /<args>/ oldfiles
 
 " Wrapping
 set linebreak
