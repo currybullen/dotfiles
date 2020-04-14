@@ -34,7 +34,7 @@ HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
 HISTFILESIZE=1000000
 HISTCONTROL=ignoredups:erasedups
-HISTIGNORE='ls:clear'
+HISTIGNORE='ls:clear:history[ \t]*|.*'
 shopt -s histappend
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
 
