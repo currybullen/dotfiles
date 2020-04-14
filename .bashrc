@@ -1,8 +1,3 @@
-# TODO:
-# * Set up git aliases
-# * Set git pager settings, change aliases accordingly
-# * Remove terminal color codes when bat 0.12.0 drops
-
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
@@ -48,15 +43,6 @@ shopt -s autocd
 shopt -s cdspell
 
 # Colors
-man() {
-    LESS_TERMCAP_md=$'\e[01;38;5;4m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[01;44;38;5;3m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[01;38;5;2m' \
-    command man "$@"
-}
 alias ls='ls --color'
 
 # Aliases
