@@ -61,17 +61,6 @@ alias .....='cd ../../../..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
-irg() {
-        local match path line
-        match=$(rg --color always --line-number "$@" \
-                | fzf --ansi --no-multi --delimiter=: --preview 'bat --color always {1} \
-                | head -500') && \
-        path=$(echo $match | awk --field-separator : '{print $1}') && \
-        line=$(echo $match | awk --field-separator : '{print $2}') && \
-        idea.sh --line $line "$path"
-	#TODO: Add something to focus IntelliJ
-}
-
 # Key bindings
 . /usr/share/fzf/shell/key-bindings.bash
 
