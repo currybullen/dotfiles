@@ -58,11 +58,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-# Maybe remove these in favor of Ctrl-T/~~<TAB>?
-fzfb() { fzf --preview "bat --color=always {} | head -500" ; }
-fzfv() { vim $(fzfb) < /dev/tty ; }
-fzfr() { vim $(rg --files-with-matches "$@" | fzfb) < /dev/tty ; }
-vrg() { vim -c "Rg $@"; }
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
