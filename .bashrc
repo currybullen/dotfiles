@@ -69,6 +69,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
 # Key bindings
+stty -ixon # Disable flow control so it doesn't interfere with C-s
 if [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
 	. /usr/share/fzf/shell/key-bindings.bash
 elif [[ -f /usr/share/fzf/key-bindings.bash ]]; then
