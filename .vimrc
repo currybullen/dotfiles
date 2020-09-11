@@ -80,4 +80,13 @@ set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
+function! GitLogWithOptionalRange(range, startline, endline, gitargs)
+	if a:range == "0"
+		execute "Git log " . a:gitargs . " %"
+	else
+		execute "Git log " . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
+	endif
+endfunction
+command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
+
 source $HOME/.coc
