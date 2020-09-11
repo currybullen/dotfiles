@@ -16,6 +16,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Looks
