@@ -17,6 +17,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Looks
@@ -80,9 +81,4 @@ set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
-" %% expands to dir of current file
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-
-" Current path of file -> clipboard
-"let @+ = expand("%:p:.")
-
+source $HOME/.coc
