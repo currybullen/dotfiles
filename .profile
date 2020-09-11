@@ -28,6 +28,8 @@ fi
 
 appendpath "$HOME/scripts"
 appendpath "$HOME/IntelliJ/bin"
+appendpath "$HOME/.cargo/bin"
+appendpath "$HOME/.cargo/env"
 
 case $- in
     *i*)
