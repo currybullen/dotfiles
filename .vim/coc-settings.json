@@ -1,0 +1,16 @@
+{
+	"java.home": "/usr/lib/jvm/java-11-openjdk-11.0.8.10-2.fc32.x86_64/",
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-1.8",
+			"path": "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.265.b01-1.fc32.x86_64",
+			"default": true
+		},
+		{
+			"name": "JavaSE-11",
+			"path": "/usr/lib/jvm/java-11-openjdk-11.0.8.10-2.fc32.x86_64"
+		}
+  ],
+  "git.enableGutters": true,
+  "java.format.settings.url": "/home/curry/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+}
