@@ -82,10 +82,11 @@ set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 function! GitLogWithOptionalRange(range, startline, endline, gitargs)
+	let log_cmd="Git log --oneline --no-patch"
 	if a:range == "0"
-		execute "Git log " . a:gitargs . " %"
+		execute log_cmd . a:gitargs . " %"
 	else
-		execute "Git log " . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
+		execute log_cmd . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
 	endif
 endfunction
 command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
