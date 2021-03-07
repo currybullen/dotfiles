@@ -4,14 +4,22 @@ fi
 
 # Completion
 shopt -s no_empty_cmd_completion
-. /etc/bash_completion.d/fzf
+if [[ -f /etc/bash_completion.d/fzf ]]; then
+	. /etc/bash_completion.d/fzf
+elif [[ -f /usr/share/fzf/completion.bash ]]; then
+	. /usr/share/fzf/completion.bash
+fi
 
 # Globbing
 shopt -s extglob
 shopt -s globstar
 
 # Prompt
-. /usr/share/git-core/contrib/completion/git-prompt.sh
+if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
+	. /usr/share/git-core/contrib/completion/git-prompt.sh
+elif [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
+	. /usr/share/git/completion/git-prompt.sh
+fi
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=0
@@ -62,7 +70,11 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
 # Key bindings
-. /usr/share/fzf/shell/key-bindings.bash
+if [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
+	. /usr/share/fzf/shell/key-bindings.bash
+elif [[ -f /usr/share/fzf/key-bindings.bash ]]; then
+	. /usr/share/fzf/key-bindings.bash
+fi
 
 # Use fd for path completion, include hidden
 _fzf_compgen_path() {
