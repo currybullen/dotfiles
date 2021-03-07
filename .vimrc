@@ -10,7 +10,7 @@ source $VIMRUNTIME/defaults.vim
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
@@ -28,13 +28,6 @@ if $TERM !=# 'linux'
     colorscheme gruvbox
     set background=dark
 endif
-
-" Status line
-set statusline=%(%{FugitiveStatusline()}\ %) " Git
-set statusline+=%<%(%f\ %)%(%m\ %)\%r " Path/modified/RO
-set statusline+=%=%(%y\ %)%(\[%{&fileencoding?&fileencoding:&encoding}\]\ %)\[%{&fileformat}\] " File info
-set statusline+=\ %3p%%\ %4l:%4c " Lines %/line #/ column
-set laststatus=2 " Always display the status line
 
 " Tab behavior
 set smarttab
