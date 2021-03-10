@@ -65,9 +65,6 @@ alias view='vim -R'
 alias vimdiff="vim -d"
 alias rm='rm -i'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
