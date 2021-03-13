@@ -16,7 +16,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-test/vim-test'
 call plug#end()
@@ -85,4 +84,3 @@ function! GitLogWithOptionalRange(range, startline, endline, gitargs)
 endfunction
 command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
 
-source $HOME/.coc
