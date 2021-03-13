@@ -54,7 +54,15 @@ set splitbelow
 set splitright
 
 " Navigation
-nnoremap gb :Buffers<CR>:b<Space>
+nnoremap <space>gb :Git blame<CR>
+nnoremap <space>gs :G<CR>
+nnoremap <space>gf :GFiles?<CR>
+nnoremap <space>gc :Commits<CR>
+nnoremap <space>gu :BCommits<CR>
+nnoremap <space>f :Files<CR>
+nnoremap <space>b :Buffers<CR>
+nnoremap <space>w :BD<CR>
+
 nnoremap gx :ls<CR>:bd<Space>
 
 " Wrapping
@@ -84,3 +92,20 @@ function! GitLogWithOptionalRange(range, startline, endline, gitargs)
 endfunction
 command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
 
+" :BD, taken from https://github.com/junegunn/fzf.vim/pull/733#issuecomment-559720813
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
