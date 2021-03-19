@@ -63,6 +63,7 @@ nnoremap <space>gu :BCommits<CR>
 nnoremap <space>f :Files<CR>
 nnoremap <space>b :Buffers<CR>
 nnoremap <space>w :BD<CR>
+map <space>s <Plug>(easymotion-prefix)
 
 nnoremap gx :ls<CR>:bd<Space>
 
