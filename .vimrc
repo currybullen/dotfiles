@@ -25,6 +25,7 @@ call plug#end()
 set cursorline
 set relativenumber
 set number
+set list
 if $TERM !=# 'linux'
     colorscheme gruvbox
     set background=dark
