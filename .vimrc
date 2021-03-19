@@ -1,8 +1,3 @@
-" TODO
-" * Change status line?
-" * Use an easier shortcut for easymotion?
-" * Try out FZF in popup with preview when FZF 0.21.0 drops
-
 " Use some sane defaults
 source $VIMRUNTIME/defaults.vim
 
