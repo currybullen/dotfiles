@@ -26,6 +26,9 @@ set cursorline
 set relativenumber
 set number
 set list
+let g:indentLine_color_term = 239
+let g:indentLine_leadingSpaceChar = '‸'
+let g:indentLine_fileTypeExclude = ['help']
 if $TERM !=# 'linux'
 	colorscheme gruvbox
 	set background=dark
@@ -116,3 +119,4 @@ command! BD call fzf#run(fzf#wrap({
 	\ 'sink*': { lines -> s:delete_buffers(lines) },
 	\ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
+
