@@ -69,6 +69,7 @@ nnoremap <space>gu :BCommits<CR>
 " Misc bindings
 nnoremap <space>w :BD<CR>
 nnoremap gx :ls<CR>:bd<Space>
+nnoremap <space>u :w !sudo tee %
 
 " Wrapping
 set linebreak
