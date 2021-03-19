@@ -46,25 +46,28 @@ set wildmode=list:longest,full
 set wildignorecase
 set path+=**
 
-" Splits
+" Split behavior
+set splitbelow
+set splitright
+
+" Navigation bindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-set splitbelow
-set splitright
+nnoremap <space>f :Files<CR>
+nnoremap <space>b :Buffers<CR>
+map <space>s <Plug>(easymotion-prefix)
 
-" Navigation
+" Git bindings
 nnoremap <space>gb :Git blame<CR>
 nnoremap <space>gs :G<CR>
 nnoremap <space>gf :GFiles?<CR>
 nnoremap <space>gc :Commits<CR>
 nnoremap <space>gu :BCommits<CR>
-nnoremap <space>f :Files<CR>
-nnoremap <space>b :Buffers<CR>
-nnoremap <space>w :BD<CR>
-map <space>s <Plug>(easymotion-prefix)
 
+" Misc bindings
+nnoremap <space>w :BD<CR>
 nnoremap gx :ls<CR>:bd<Space>
 
 " Wrapping
