@@ -18,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-test/vim-test'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Looks
