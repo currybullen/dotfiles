@@ -16,6 +16,7 @@ Plug 'vim-test/vim-test'
 Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-eunuch'
 call plug#end()
 
 " Looks
