@@ -15,6 +15,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-test/vim-test'
 Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " Looks
