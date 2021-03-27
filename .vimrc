@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-test/vim-test'
 Plug 'Yggdroot/indentLine'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " Looks
@@ -24,6 +25,7 @@ set list
 let g:indentLine_color_term = 239
 let g:indentLine_leadingSpaceChar = '‸'
 let g:indentLine_fileTypeExclude = ['help']
+let g:show_spaces_that_precede_tabs=1
 if $TERM !=# 'linux'
 	colorscheme gruvbox
 	set background=dark
