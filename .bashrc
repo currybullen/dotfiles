@@ -32,8 +32,8 @@ R='\e[1;38;5;1m'
 Y='\e[1;38;5;3m'
 GY='\e[1;38;5;7m'
 RE='\e[0m'
-function ret_color { 
-    [ $? = 0 ] && echo -e "$G" || echo -e "$R"
+function ret_color {
+	[ $? = 0 ] && echo -e "$G" || echo -e "$R"
 }
 
 PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]]\n \[\$(ret_color)\]$\[$RE\] "
@@ -77,12 +77,12 @@ fi
 
 # Use fd for path completion, include hidden
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
+	fd --hidden --follow --exclude ".git" . "$1"
 }
 
 # Use fd for dir completion, include hidden
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+	fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Switch term type when SSHing from tmux
