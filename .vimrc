@@ -18,14 +18,12 @@ Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " Looks
-set cursorline
 set relativenumber
 set number
-set list
-let g:indentLine_color_term = 239
-let g:indentLine_leadingSpaceChar = '‸'
+let g:indentLine_color_term = 239 " This color is gruvbox specific
+let g:indentLine_enabled = 0
 let g:indentLine_fileTypeExclude = ['help']
-let g:show_spaces_that_precede_tabs=1
+let g:show_spaces_that_precede_tabs = 1
 if $TERM !=# 'linux'
 	colorscheme gruvbox
 	set background=dark
@@ -71,6 +69,8 @@ nnoremap <space>gu :BCommits<CR>
 nnoremap <space>w :BD<CR>
 nnoremap gx :ls<CR>:bd<Space>
 nnoremap <space>u :w !sudo tee %
+nnoremap <space>i :IndentLinesToggle<CR>
+	\:set list!<CR>
 
 " Wrapping
 set linebreak
@@ -80,7 +80,7 @@ set autoread " Reload file when changed on disk
 set hidden " Enable hiding edited buffers
 set formatoptions+=j " Delete comment character when joining commented lines
 set complete-=i " Do not look through included files when completing
-set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+ " Chars to display when running :list
+set listchars=tab:▶‒,trail:-,extends:>,precedes:<,nbsp:+,lead:- " Chars to display when running :list
 setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags file
 set pastetoggle=<F2> " Toggles paste option
 set display+=lastline " @@@ ends long lines
