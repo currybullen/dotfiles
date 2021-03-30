@@ -119,3 +119,16 @@ command! BD call fzf#run(fzf#wrap({
 	\ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
+let g:fugitive_gitlab_domains = ['https://git.polystar.se']
+
+"source $HOME/.coc
+
+function! GitLogWithOptionalRange(range, startline, endline, gitargs)
+        if a:range == "0"
+                execute "Git log " . a:gitargs . " %"
+        else
+                execute "Git log " . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
+        endif
+endfunction
+command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
+
