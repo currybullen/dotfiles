@@ -120,10 +120,6 @@ command! BD call fzf#run(fzf#wrap({
 	\ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
-let g:fugitive_gitlab_domains = ['https://git.polystar.se']
-
-"source $HOME/.coc
-
 function! GitLogWithOptionalRange(range, startline, endline, gitargs)
         if a:range == "0"
                 execute "Git log " . a:gitargs . " %"
