@@ -133,3 +133,9 @@ function! GitLogWithOptionalRange(range, startline, endline, gitargs)
 endfunction
 command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
 
+augroup indentations_per_filetype
+	autocmd!
+	autocmd FileType nginx setlocal ts=4 sw=4 sts=4 expandtab
+	autocmd FileType yaml setlocal ts=2 sw=2 sts=2 expandtab
+	autocmd FileType toml setlocal ts=2 sw=2 sts=2 expandtab
+augroup END
