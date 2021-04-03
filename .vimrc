@@ -17,6 +17,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " Looks
