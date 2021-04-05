@@ -1,10 +1,13 @@
+# Source system-wide bashrc
 if [ -f /etc/bash.bashrc ]; then
 	. /etc/bash.bashrc
 elif [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+###############################################################################
 # Completion
+###############################################################################
 shopt -s no_empty_cmd_completion
 if [[ -f /etc/bash_completion.d/fzf ]]; then
 	. /etc/bash_completion.d/fzf
@@ -12,11 +15,15 @@ elif [[ -f /usr/share/fzf/completion.bash ]]; then
 	. /usr/share/fzf/completion.bash
 fi
 
+###############################################################################
 # Globbing
+###############################################################################
 shopt -s extglob
 shopt -s globstar
 
+###############################################################################
 # Prompt
+###############################################################################
 if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
 	. /usr/share/git-core/contrib/completion/git-prompt.sh
 elif [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
@@ -38,7 +45,9 @@ function ret_color {
 
 PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]]\n \[\$(ret_color)\]$\[$RE\] "
 
+###############################################################################
 # History
+###############################################################################
 HISTTIMEFORMAT="%d/%m/%y %T "
 HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
@@ -48,14 +57,20 @@ HISTIGNORE='ls:clear:history[ \t]*|.*'
 shopt -s histappend
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a"
 
+###############################################################################
 # Better cd navigation
+###############################################################################
 shopt -s autocd
 shopt -s cdspell
 
+###############################################################################
 # Colors
+###############################################################################
 alias ls='ls --color'
 
+###############################################################################
 # Aliases
+###############################################################################
 if [[ -f /usr/bin/vimx ]]; then
 	alias vim=vimx
 fi
@@ -94,13 +109,19 @@ elif grep -q '^ID=archarm$' /etc/os-release; then
 	pacqo() { pacman -Qo "$1"; }
 fi
 
+###############################################################################
 # Key bindings
+###############################################################################
 stty -ixon # Disable flow control so it doesn't interfere with C-s
 if [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
 	. /usr/share/fzf/shell/key-bindings.bash
 elif [[ -f /usr/share/fzf/key-bindings.bash ]]; then
 	. /usr/share/fzf/key-bindings.bash
 fi
+
+###############################################################################
+# Misc
+###############################################################################
 
 # Use fd for path completion, include hidden
 _fzf_compgen_path() {
