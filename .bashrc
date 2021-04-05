@@ -68,6 +68,32 @@ alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 
+if grep -q '^ID=fedora$' /etc/os-release; then
+	alias pacsyu="sudo dnf upgrade"
+	pacs() { sudo dnf install "$1"; }
+	pacss() { dnf search "$1"; }
+	pacsi() { dnf info "$1"; }
+	pacrs() { sudo dnf remove "$1"; }
+	pacf() { dnf provides "$1"; }
+	pacfl() { dnf repoquery "$1"; }
+	pacqs() { rpm -qa "*$1*"; }
+	pacql() { rpm -ql "$1"; }
+	pacqi() { rpm -qi "$1"; }
+	pacqo() { rpm -qo "$1"; }
+elif grep -q '^ID=archarm$' /etc/os-release; then
+	alias pacsyu="sudo pacman -Syu"
+	pacs() { sudo pacman -S install "$1"; }
+	pacss() { pacman -Ss "$1"; }
+	pacsi() { pacman -Si "$1"; }
+	pacrs() { sudo pacman -Rs "$1"; }
+	pacf() { pacman -F "$1"; }
+	pacfl() { pacman -Fl "$1"; }
+	pacqs() { pacman -Qs "*$1*"; }
+	pacql() { pacman -Ql "$1"; }
+	pacqi() { pacman -Qi "$1"; }
+	pacqo() { pacman -Qo "$1"; }
+fi
+
 # Key bindings
 stty -ixon # Disable flow control so it doesn't interfere with C-s
 if [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
