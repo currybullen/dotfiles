@@ -18,6 +18,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'cespare/vim-toml'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Looks
