@@ -123,11 +123,11 @@ command! BD call fzf#run(fzf#wrap({
 \ }))
 
 function! GitLogWithOptionalRange(range, startline, endline, gitargs)
-        if a:range == "0"
-                execute "Git log " . a:gitargs . " %"
-        else
-                execute "Git log " . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
-        endif
+	if a:range == "0"
+		execute "Git log " . a:gitargs . " %"
+	else
+		execute "Git log " . a:gitargs . " -L" . a:startline . "," . a:endline . ":% "
+	endif
 endfunction
 command! -range -nargs=* Glogg call GitLogWithOptionalRange(<range>, <line1>, <line2>, <q-args>)
 
