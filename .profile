@@ -1,3 +1,5 @@
+# Basically only env variables and PATH definition goes here
+
 if test "$BASH"; then
 	appendpath () {
 	    case ":$PATH:" in
