@@ -75,7 +75,7 @@ if grep -q '^ID=fedora$' /etc/os-release; then
 	pacsi() { dnf info "$1"; }
 	pacrs() { sudo dnf remove "$1"; }
 	pacf() { dnf provides "$1"; }
-	pacfl() { dnf repoquery "$1"; }
+	pacfl() { dnf repoquery -l "$1"; }
 	pacqs() { rpm -qa "*$1*"; }
 	pacql() { rpm -ql "$1"; }
 	pacqi() { rpm -qi "$1"; }
