@@ -79,7 +79,7 @@ if grep -q '^ID=fedora$' /etc/os-release; then
 	pacqs() { rpm -qa "*$1*"; }
 	pacql() { rpm -ql "$1"; }
 	pacqi() { rpm -qi "$1"; }
-	pacqo() { rpm -qo "$1"; }
+	pacqo() { rpm -qf "$1"; }
 elif grep -q '^ID=archarm$' /etc/os-release; then
 	alias pacsyu="sudo pacman -Syu"
 	pacs() { sudo pacman -S install "$1"; }
