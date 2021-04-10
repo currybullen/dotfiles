@@ -49,7 +49,7 @@ PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\
 # History
 ###############################################################################
 HISTTIMEFORMAT="%d/%m/%y %T "
-HISTFILE=~/.bash_history.$HOSTNAME
+HISTFILE=~/.bash_history.raspinator
 HISTSIZE=10000
 HISTFILESIZE=1000000
 HISTCONTROL=ignoredups:erasedups
@@ -85,7 +85,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 if grep -q '^ID=fedora$' /etc/os-release; then
 	alias pacsyu="sudo dnf upgrade"
-	pacs() { sudo dnf install "$1"; }
+	pacs() { sudo dnf install "$@"; }
 	pacss() { dnf search "$1"; }
 	pacsi() { dnf info "$1"; }
 	pacrs() { sudo dnf remove "$1"; }
@@ -97,7 +97,7 @@ if grep -q '^ID=fedora$' /etc/os-release; then
 	pacqo() { rpm -qf "$1"; }
 elif grep -q '^ID=archarm$' /etc/os-release; then
 	alias pacsyu="sudo pacman -Syu"
-	pacs() { sudo pacman -S install "$1"; }
+	pacs() { sudo pacman -S "$@"; }
 	pacss() { pacman -Ss "$1"; }
 	pacsi() { pacman -Si "$1"; }
 	pacrs() { sudo pacman -Rs "$1"; }
