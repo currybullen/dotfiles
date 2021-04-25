@@ -19,6 +19,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'cespare/vim-toml'
 Plug 'preservim/nerdtree'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Looks
@@ -90,6 +91,7 @@ setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags fil
 set pastetoggle=<F2> " Toggles paste option
 set display+=lastline " @@@ ends long lines
 set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
+let g:vimwiki_list = [{'path': '$HOME/Sync/vimwiki'}]
 
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
@@ -136,4 +138,5 @@ augroup indentations_per_filetype
 	autocmd FileType nginx setlocal ts=4 sw=4 sts=4 expandtab
 	autocmd FileType yaml setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd FileType toml setlocal ts=2 sw=2 sts=2 expandtab
+	autocmd FileType vimwiki setlocal ts=2 sw=2 sts=2 expandtab
 augroup END
