@@ -49,7 +49,7 @@ PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\
 # History
 ###############################################################################
 HISTTIMEFORMAT="%d/%m/%y %T "
-HISTFILE=~/.bash_history.raspinator
+HISTFILE=~/.bash_history.$HOSTNAME
 HISTSIZE=10000
 HISTFILESIZE=1000000
 HISTCONTROL=ignoredups:erasedups
