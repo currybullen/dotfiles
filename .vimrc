@@ -19,6 +19,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'cespare/vim-toml'
 Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Looks
