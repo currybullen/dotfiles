@@ -15,6 +15,14 @@ elif [[ -f /usr/share/fzf/completion.bash ]]; then
 	. /usr/share/fzf/completion.bash
 fi
 
+if command -v doctl &> /dev/null; then
+	. <(doctl completion bash)
+fi
+
+if command -v kubectl &> /dev/null; then
+	. <(kubectl completion bash)
+fi
+
 ###############################################################################
 # Globbing
 ###############################################################################
