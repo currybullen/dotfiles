@@ -111,7 +111,7 @@ elif grep -q '^ID=archarm$' /etc/os-release; then
 	pacrs() { sudo pacman -Rs "$1"; }
 	pacf() { pacman -F "$1"; }
 	pacfl() { pacman -Fl "$1"; }
-	pacqs() { pacman -Qs "*$1*"; }
+	pacqs() { pacman -Qs "$1"; }
 	pacql() { pacman -Ql "$1"; }
 	pacqi() { pacman -Qi "$1"; }
 	pacqo() { pacman -Qo "$1"; }
