@@ -27,6 +27,7 @@ if test "$BASH"; then
 	export MANROFFOPT="-c"
 	export LESS="--ignore-case --RAW-CONTROL-CHARS"
 
+	appendpath "$HOME/.local/bin"
 	appendpath "$HOME/scripts"
 	appendpath "$HOME/IntelliJ/bin"
 	appendpath "$HOME/.cargo/bin"
