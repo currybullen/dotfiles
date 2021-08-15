@@ -74,6 +74,8 @@ nnoremap <space>u :w !sudo tee %
 set list
 nnoremap <space>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 " Wrapping
 set linebreak
