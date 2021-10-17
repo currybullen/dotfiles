@@ -84,13 +84,10 @@ alias ls='ls --color'
 ###############################################################################
 # Aliases
 ###############################################################################
-if [[ -f /usr/bin/vimx ]]; then
-	alias vim=vimx
-fi
 alias ll='ls -ahl'
 alias less='less -R'
-alias view='vim -R'
-alias vimdiff="vim -d"
+alias view='nvim -R'
+alias vimdiff="nvim -d"
 alias rm='rm -i'
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

@@ -6,7 +6,7 @@ alias gb='git branch'
 alias gch='git checkout'
 alias ga='git add'
 alias gc='git commit'
-alias vgs='vim -c ":Gstatus|:only"'
+alias vgs='nvim -c ":Gstatus|:only"'
 alias gpl='git pull'
 alias gps='git push'
 alias gcan='git commit --amend --no-edit'
@@ -29,5 +29,5 @@ gr() { cd $(git rev-parse --show-toplevel); }
 
 vim_log() {
         local branch="$(fzf_select_branch)" &&
-        vim -c ":0Git log $branch $*"
+        nvim -c ":0Git log $branch $*"
 }
