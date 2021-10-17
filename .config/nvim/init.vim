@@ -93,6 +93,7 @@ set display+=lastline " @@@ ends long lines
 set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 let g:vimwiki_list = [{'path': '$HOME/Sync/vimwiki'}]
 let g:vimwiki_global_ext = 0
+let g:airline_symbols_ascii = 1
 
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
