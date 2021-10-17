@@ -1,6 +1,10 @@
 # Basically only env variables and PATH definition goes here
 
 if test "$BASH"; then
+	if [[ "$NAME" == "fedora-toolbox" ]]; then
+		return
+	fi
+
 	appendpath () {
 	    case ":$PATH:" in
 		*:"$1":*)

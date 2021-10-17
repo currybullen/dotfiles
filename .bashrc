@@ -5,6 +5,11 @@ elif [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [[ "$NAME" == "fedora-toolbox" ]]; then
+	HISTFILE=~/.bash_history.toolbox
+	return
+fi
+
 ###############################################################################
 # Completion
 ###############################################################################
