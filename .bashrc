@@ -96,6 +96,13 @@ alias rm='rm -i'
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
+alias vim=nvim
+bluon() {
+	sudo sh -c 'systemctl unmask --runtime bluetooth && systemctl start bluetooth'
+}
+bluoff() {
+	sudo systemctl mask --now --runtime bluetooth
+}
 
 if grep -q '^ID=fedora$' /etc/os-release; then
 	alias pacsyu="sudo dnf upgrade"
