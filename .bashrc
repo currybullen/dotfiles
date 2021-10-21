@@ -28,8 +28,8 @@ if command -v kubectl &> /dev/null; then
 	. <(kubectl completion bash)
 fi
 
-if [ -f /usr/bin/terraform ]; then
-	complete -C /usr/bin/terraform terraform
+if command -v terraform &> /dev/null; then
+	complete -C terraform terraform
 fi
 
 ###############################################################################
