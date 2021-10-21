@@ -6,12 +6,16 @@ if test "$BASH"; then
 	fi
 
 	appendpath () {
-	    case ":$PATH:" in
-		*:"$1":*)
-		    ;;
-		*)
-		    PATH="${PATH:+$PATH:}$1"
-	    esac
+		if [ ! -e "$1" ]; then
+			return
+		fi
+
+		case ":$PATH:" in
+			*:"$1":*)
+				;;
+			*)
+				PATH="${PATH:+$PATH:}$1"
+		esac
 	}
 
 	if [ -f ~/.profile.$HOSTNAME ]; then
