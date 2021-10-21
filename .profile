@@ -31,9 +31,8 @@ if test "$BASH"; then
 	export FZF_CTRL_T_OPTS="--preview 'bat --color always {} | head -500'"
 	export VISUAL="nvim"
 	export EDITOR="$VISUAL"
-	export BAT_PAGER="less -RF" # Probably only needed because of a bug
-	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-	export MANROFFOPT="-c"
+	export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
+	export MANROFFOPT="-c" # Set since using bat as a man pager can cause formatting issues
 	export LESS="--ignore-case --RAW-CONTROL-CHARS"
 
 	appendpath "$HOME/.local/bin"
