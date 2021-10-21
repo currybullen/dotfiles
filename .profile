@@ -29,6 +29,7 @@ if test "$BASH"; then
 		--bind ctrl-u:preview-page-up \
 		--bind ctrl-d:preview-page-down"
 	export FZF_CTRL_T_OPTS="--preview 'bat --color always {} | head -500'"
+	export VISUAL="nvim"
 	export EDITOR="$VISUAL"
 	export BAT_PAGER="less -RF" # Probably only needed because of a bug
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
