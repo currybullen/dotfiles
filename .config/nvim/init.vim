@@ -56,6 +56,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap tt :tabnew<CR>
+nnoremap td :tabclose<CR>
 nnoremap <space>f :Files<CR>
 nnoremap <space>b :Buffers<CR>
 map <space>s <Plug>(easymotion-prefix)
