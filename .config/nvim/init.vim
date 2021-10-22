@@ -68,6 +68,11 @@ nnoremap <space>gs :G<CR>
 nnoremap <space>gf :GFiles?<CR>
 nnoremap <space>gc :Commits<CR>
 nnoremap <space>gu :BCommits<CR>
+nnoremap <space>dv :Gvdiffsplit<CR>
+
+" Allow opening a diff in a new tab from :G with dt
+" https://github.com/tpope/vim-fugitive/issues/1451#issuecomment-770310789
+au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gdiffsplit<CR>
 
 " Misc bindings
 nnoremap <space>w :BD<CR>
