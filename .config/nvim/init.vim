@@ -17,6 +17,7 @@ Plug 'preservim/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'lambdalisue/suda.vim'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 " Looks
