@@ -60,7 +60,7 @@ nnoremap tt :tabnew<CR>
 nnoremap td :tabclose<CR>
 nnoremap <space>f :Files<CR>
 nnoremap <space>b :Buffers<CR>
-map <space>s <Plug>(easymotion-prefix)
+map <space>s <Plug>(easymotion-s)
 
 " Git bindings
 nnoremap <space>gb :Git blame<CR>
