@@ -81,6 +81,7 @@ nnoremap <space>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
+nnoremap <space>h :nohlsearch<CR>
 
 " Wrapping
 set linebreak
