@@ -77,7 +77,6 @@ au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gdiffsplit<CR
 
 " Misc bindings
 nnoremap <space>w :BD<CR>
-set list
 nnoremap <space>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
 noremap <leader>y "+y
@@ -91,6 +90,7 @@ set autoread " Reload file when changed on disk
 set hidden " Enable hiding edited buffers
 set formatoptions+=j " Delete comment character when joining commented lines
 set complete-=i " Do not look through included files when completing
+set list
 set listchars=tab:▶‒,trail:-,extends:>,precedes:<,nbsp:+,lead:- " Chars to display when running :list
 setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags file
 set pastetoggle=<F2> " Toggles paste option
