@@ -77,8 +77,6 @@ au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gdiffsplit<CR
 
 " Misc bindings
 nnoremap <space>w :BD<CR>
-" nnoremap gx :ls<CR>:bd<Space>
-nnoremap <space>u :w !sudo tee %
 set list
 nnoremap <space>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
