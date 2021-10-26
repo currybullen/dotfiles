@@ -10,13 +10,15 @@
 	co = checkout
 	br = branch
 	ci = commit
-	cn = 'commit --amend --no-edit'
+	cn = commit --amend --no-edit
 	st = status
-	di = 'diff --color-always'
+	di = diff --color=always
 	lo = log
 	ad = add
 	pl = pull
 	ps = push
 	sh = show
 	sa = stash
-	sp = 'stash pop --index'
+	sp = stash pop --index
+	re = restore
+	rs = restore --staged
