@@ -97,7 +97,7 @@ alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim=nvim
 alias g=git
-alias vgs='nvim -c ":Gstatus|:only"'
+alias vgs='nvim -c ":Git|:only"'
 
 fzf_select_branch() {
 	local branches branch
