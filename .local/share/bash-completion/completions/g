@@ -1,0 +1,4 @@
+if [[ -f /usr/share/bash-completion/completions/git ]]; then
+	. /usr/share/bash-completion/completions/git
+	complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
+fi

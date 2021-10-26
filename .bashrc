@@ -97,6 +97,7 @@ alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . ~/.git_aliases
 alias vim=nvim
+alias g=git
 bluon() {
 	sudo sh -c 'systemctl unmask --runtime bluetooth && systemctl start bluetooth'
 }
