@@ -6,3 +6,17 @@
 	autoStash = true
 [init]
 	defaultBranch = main
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	cn = 'commit --amend --no-edit'
+	st = status
+	di = 'diff --color-always'
+	lo = log
+	ad = add
+	pl = pull
+	ps = push
+	sh = show
+	sa = stash
+	sp = 'stash pop --index'
