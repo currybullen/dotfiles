@@ -14,9 +14,7 @@ fi
 # Completion
 ###############################################################################
 shopt -s no_empty_cmd_completion
-if [[ -f /etc/bash_completion.d/fzf ]]; then
-	. /etc/bash_completion.d/fzf
-elif [[ -f /usr/share/fzf/completion.bash ]]; then
+if [[ -f /usr/share/fzf/completion.bash ]]; then
 	. /usr/share/fzf/completion.bash
 fi
 
