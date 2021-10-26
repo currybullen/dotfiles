@@ -86,7 +86,7 @@ shopt -s cdspell
 alias ls='ls --color'
 
 ###############################################################################
-# Aliases
+# Aliases / functions
 ###############################################################################
 alias ll='ls -ahl'
 alias less='less -R'
@@ -95,12 +95,34 @@ alias vimdiff="nvim -d"
 alias rm='rm -i'
 alias ..='cd ..'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-. ~/.git_aliases
 alias vim=nvim
 alias g=git
+alias vgs='nvim -c ":Gstatus|:only"'
+
+fzf_select_branch() {
+	local branches branch
+	branches=$(git --no-pager branch -vv) &&
+	branch=$(echo "$branches" | fzf +m) &&
+	echo "$branch" | awk '{if ($1=="*") $1=$2; print $1}' | sed "s/.* //"
+}
+
+fbr() {
+	local branch
+	branch=$(fzf_select_branch) &&
+	git checkout "$branch"
+}
+
+gr() { cd $(git rev-parse --show-toplevel); }
+
+flo() {
+        local branch="$(fzf_select_branch)" &&
+        nvim -c ":0Git log $branch $*"
+}
+
 bluon() {
 	sudo sh -c 'systemctl unmask --runtime bluetooth && systemctl start bluetooth'
 }
+
 bluoff() {
 	sudo systemctl mask --now --runtime bluetooth
 }
