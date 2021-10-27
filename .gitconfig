@@ -7,18 +7,19 @@
 [init]
 	defaultBranch = main
 [alias]
-	co = checkout
+	ad = add
 	br = branch
+	ca = commit --amend
 	ci = commit
 	cn = commit --amend --no-edit
-	st = status
+	co = checkout
 	di = diff --color=always
 	lo = log
-	ad = add
 	pl = pull
 	ps = push
-	sh = show
-	sa = stash
-	sp = stash pop --index
 	re = restore
 	rs = restore --staged
+	sa = stash
+	sh = show
+	sp = stash pop --index
+	st = status
