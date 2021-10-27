@@ -92,7 +92,7 @@ alias view='nvim -R'
 alias vimdiff="nvim -d"
 alias rm='rm -i'
 alias ..='cd ..'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias c='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim=nvim
 alias g=git
 alias vgs='nvim -c ":Git|:only"'
