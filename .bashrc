@@ -131,7 +131,7 @@ if grep -q '^ID=fedora$' /etc/os-release; then
 	pacs() { sudo dnf install "$@"; }
 	pacss() { dnf search "$1"; }
 	pacsi() { dnf info "$1"; }
-	pacrs() { sudo dnf remove "$1"; }
+	pacrs() { sudo dnf remove "$@"; }
 	pacf() { dnf provides "$1"; }
 	pacfl() { dnf repoquery -l "$1"; }
 	pacqs() { rpm -qa "*$1*"; }
@@ -143,7 +143,7 @@ elif grep -q '^ID=archarm$' /etc/os-release; then
 	pacs() { sudo pacman -S "$@"; }
 	pacss() { pacman -Ss "$1"; }
 	pacsi() { pacman -Si "$1"; }
-	pacrs() { sudo pacman -Rs "$1"; }
+	pacrs() { sudo pacman -Rs "$@"; }
 	pacf() { pacman -F "$1"; }
 	pacfl() { pacman -Fl "$1"; }
 	pacqs() { pacman -Qs "$1"; }
