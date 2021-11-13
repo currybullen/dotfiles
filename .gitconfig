@@ -21,3 +21,4 @@
 	sh = show
 	sp = stash pop --index
 	st = status
+	sw = switch
