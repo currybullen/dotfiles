@@ -9,12 +9,15 @@
 	br = branch
 	ca = commit --amend
 	ci = commit
+	cl = clone
 	cn = commit --amend --no-edit
 	co = checkout
 	di = diff --color=always
 	lo = log
+	me = merge
 	pl = pull
 	ps = push
+	rb = rebase
 	re = restore
 	rs = restore --staged
 	sa = stash
