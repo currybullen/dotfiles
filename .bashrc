@@ -138,7 +138,7 @@ if grep -q '^ID=fedora$' /etc/os-release; then
 	pacql() { rpm -ql "$1"; }
 	pacqi() { rpm -qi "$1"; }
 	pacqo() { rpm -qf "$1"; }
-elif grep -q '^ID=archarm$' /etc/os-release; then
+elif grep -q '^ID=arch\(arm\)\?$' /etc/os-release; then
 	alias pacsyu="sudo pacman -Syu"
 	pacs() { sudo pacman -S "$@"; }
 	pacss() { pacman -Ss "$1"; }
