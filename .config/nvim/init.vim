@@ -18,6 +18,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'lambdalisue/suda.vim'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-dadbod'
 call plug#end()
 
 " Looks
@@ -97,7 +98,7 @@ setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags fil
 set pastetoggle=<F2> " Toggles paste option
 set display+=lastline " @@@ ends long lines
 set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
-let g:vimwiki_list = [{'path': '$HOME/Sync/vimwiki', 'diary_caption_level': -1}]
+let g:vimwiki_list = [{'path': '$HOME/Sync/default/vimwiki', 'diary_caption_level': -1}]
 let g:vimwiki_global_ext = 0
 let g:airline_symbols_ascii = 1
 
@@ -147,4 +148,5 @@ augroup indentations_per_filetype
 	autocmd FileType yaml setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd FileType toml setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd FileType vimwiki setlocal ts=2 sw=2 sts=2 expandtab
+	autocmd FileType tf setlocal ts=2 sw=2 sts=2 expandtab
 augroup END
