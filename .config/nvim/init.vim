@@ -60,17 +60,18 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <Leader>tt :tabnew<CR>
 nnoremap <Leader>td :tabclose<CR>
-nnoremap <space>f :Files<CR>
-nnoremap <space>b :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 map <space>s <Plug>(easymotion-s)
 
 " Git bindings
-nnoremap <space>gb :Git blame<CR>
-nnoremap <space>gs :G<CR>
-nnoremap <space>gf :GFiles?<CR>
-nnoremap <space>gc :Commits<CR>
-nnoremap <space>gu :BCommits<CR>
-nnoremap <space>dv :Gvdiffsplit<CR>
+nnoremap <Leader>gb :Git blame<CR>
+nnoremap <Leader>gs :G<CR>
+nnoremap <Leader>gf :GFiles?<CR>
+nnoremap <Leader>gc :Commits<CR>
+nnoremap <Leader>gu :BCommits<CR>
+nnoremap <Leader>gd :Gvdiffsplit!<CR>
+nnoremap <Leader>gl :tab :Git log --name-status 
 
 " Allow opening a diff in a new tab from :G with dt
 " https://github.com/tpope/vim-fugitive/issues/1451#issuecomment-770310789
