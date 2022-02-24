@@ -78,12 +78,12 @@ nnoremap <Leader>gl :tab :Git log --name-status
 au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gdiffsplit<CR>
 
 " Misc bindings
-nnoremap <space>w :BD<CR>
-nnoremap <space>i :IndentLinesToggle<CR>
+nnoremap <leader>w :BD<CR>
+nnoremap <leader>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
-nnoremap <space>h :nohlsearch<CR>
+nnoremap <leader>h :nohlsearch<CR>
 
 " Wrapping
 set linebreak
