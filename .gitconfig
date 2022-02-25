@@ -5,32 +5,37 @@
 [init]
 	defaultBranch = main
 [alias]
-	ad  = add
-	br  = branch
-	cia = commit --amend
-	ci  = commit
-	cin = commit --amend --no-edit
-	cl  = clone
-	co  = checkout
-	di  = diff --color=always
-	dic = diff --cached --color=always
-	dtd = difftool --dir-diff
-	dt  = difftool
-	lo  = log
-	lon = log --name-status
-	me  = merge
-	pl  = pull
-	ps  = push
-	rb  = rebase
-	reh = reset --hard
-	re  = restore
-	rss = restore --staged
-	rsw = restore --staged --worktree
-	sa  = stash
-	sh  = show
-	sp  = stash pop --index
-	st  = status
-	sw  = switch
+	ad   = add
+	br   = branch
+	ci   = commit
+	cia  = commit --amend
+	cian = commit --amend --no-edit
+	cim  = commit --message
+	cl   = clone
+	co   = checkout
+	di   = diff --color=always
+	dic  = diff --color=always --cached
+	dt   = difftool
+	dtc  = difftool --cached
+	dtd  = difftool --dir-diff
+	dtdc = difftool --dir-diff --cached
+	lo   = log
+	loa  = log --all --decorate --oneline --graph
+	lon  = log --name-status
+	me   = merge
+	pl   = pull
+	ps   = push
+	rb   = rebase
+	rh   = reset --hard
+	rs   = restore
+	rss  = restore --staged
+	rsw  = restore --staged --worktree
+	sa   = stash
+	sh   = show
+	sp   = stash pop --index
+	sd   = stash drop
+	st   = status
+	sw   = switch
 [diff]
 	tool = meld
 [difftool]
