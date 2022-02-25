@@ -78,12 +78,12 @@ nnoremap <Leader>gl :tab :Git log --name-status
 au User FugitiveIndex nmap <buffer> dt :Gtabedit <Plug><cfile><Bar>Gdiffsplit<CR>
 
 " Misc bindings
-nnoremap <leader>w :BD<CR>
-nnoremap <leader>i :IndentLinesToggle<CR>
+nnoremap <Leader>d :BD<CR>
+nnoremap <Leader>i :IndentLinesToggle<CR>
 	\ :set list!<CR>
-noremap <leader>y "+y
-noremap <leader>p "+p
-nnoremap <leader>h :nohlsearch<CR>
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+nnoremap <Leader>h :nohlsearch<CR>
 
 " Wrapping
 set linebreak
@@ -102,6 +102,7 @@ set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 let g:vimwiki_list = [{'path': '$HOME/Sync/default/vimwiki', 'diary_caption_level': -1}]
 let g:vimwiki_global_ext = 0
 let g:airline_symbols_ascii = 1
+let g:gitgutter_map_keys = 0
 
 " Fix for editorconfig + fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
