@@ -5,27 +5,32 @@
 [init]
 	defaultBranch = main
 [alias]
-	ad = add
-	br = branch
-	ca = commit --amend
-	ci = commit
-	cl = clone
-	cn = commit --amend --no-edit
-	co = checkout
-	di = diff --color=always
-	dt = difftool
-	lo = log
-	me = merge
-	pl = pull
-	ps = push
-	rb = rebase
-	re = restore
-	rs = restore --staged
-	sa = stash
-	sh = show
-	sp = stash pop --index
-	st = status
-	sw = switch
+	ad  = add
+	br  = branch
+	cia = commit --amend
+	ci  = commit
+	cin = commit --amend --no-edit
+	cl  = clone
+	co  = checkout
+	di  = diff --color=always
+	dic = diff --cached --color=always
+	dtd = difftool --dir-diff
+	dt  = difftool
+	lo  = log
+	lon = log --name-status
+	me  = merge
+	pl  = pull
+	ps  = push
+	rb  = rebase
+	reh = reset --hard
+	re  = restore
+	rss = restore --staged
+	rsw = restore --staged --worktree
+	sa  = stash
+	sh  = show
+	sp  = stash pop --index
+	st  = status
+	sw  = switch
 [diff]
 	tool = nvimdiff
 [difftool]
