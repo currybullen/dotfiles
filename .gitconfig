@@ -32,6 +32,6 @@
 	st  = status
 	sw  = switch
 [diff]
-	tool = nvimdiff
+	tool = meld
 [difftool]
 	prompt = false
