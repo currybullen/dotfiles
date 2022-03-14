@@ -24,6 +24,7 @@
 	loa  = log --all --decorate --oneline --graph
 	lon  = log --name-status
 	me   = merge
+	mt   = mergetool
 	pl   = pull
 	ps   = push
 	rb   = rebase
@@ -41,3 +42,5 @@
 	tool = meld
 [difftool]
 	prompt = false
+[merge]
+	tool = meld
