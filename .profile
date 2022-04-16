@@ -28,7 +28,7 @@ if test "$BASH"; then
 		--bind ctrl-s:jump \
 		--bind ctrl-u:preview-page-up \
 		--bind ctrl-d:preview-page-down"
-	export FZF_CTRL_T_OPTS="--preview 'bat --color always {} | head -500'"
+	export FZF_CTRL_T_OPTS="--preview 'bat --theme ansi --color always {} | head -500'"
 	export VISUAL="nvim"
 	export EDITOR="$VISUAL"
 	export LESS="--ignore-case --RAW-CONTROL-CHARS"
