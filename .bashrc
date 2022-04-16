@@ -47,18 +47,16 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=0
-B='\e[1;38;5;4m'
-CY='\e[1;38;5;6m'
-G='\e[1;38;5;2m'
-R='\e[1;38;5;1m'
-Y='\e[1;38;5;3m'
-GY='\e[1;38;5;7m'
-RE='\e[0m'
+FORMATTING_RESET='\e[0m'
 function ret_color {
-	[ $? = 0 ] && echo -e "$G" || echo -e "$R"
+	local RETURN_CODE=$?
+	local G='\e[1;38;5;2m'
+	local R='\e[1;38;5;1m'
+	[[ $RETURN_CODE -eq 0 ]] && echo -e "$G" || echo -e "$R"
 }
 
-PS1="\[$GY\](\[$Y\]\A\[$GY\]) [\[$G\]\u@\h \[$CY\]\W\$(__git_ps1 \"\[$GY\]|\[$Y\]%s\")\[$GY\]]\n \[\$(ret_color)\]$\[$RE\] "
+FORMATTING_RESET='\e[0m'
+PS1="(\A) [\u@\h \W\$(__git_ps1 \"|%s\")]\n \[\$(ret_color)\]$\[$FORMATTING_RESET\] "
 
 ###############################################################################
 # History
