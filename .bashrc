@@ -1,11 +1,11 @@
 # Source system-wide bashrc
-if [ -f /etc/bash.bashrc ]; then
+if [[ -f /etc/bash.bashrc ]]; then
 	. /etc/bash.bashrc
-elif [ -f /etc/bashrc ]; then
+elif [[ -f /etc/bashrc ]]; then
 	. /etc/bashrc
 fi
 
-if [[ "$NAME" == "fedora-toolbox" ]]; then
+if [[ $NAME == "fedora-toolbox" ]]; then
 	HISTFILE=~/.bash_history.toolbox
 	return
 fi
@@ -176,13 +176,13 @@ _fzf_compgen_dir() {
 
 # Switch term type when SSHing from tmux
 ssh() {
-	if [ "$TERM" = tmux-256color ]; then
+	if [[ $TERM = tmux-256color ]]; then
 		TERM=xterm-256color command ssh "$@"
 	else
 		command ssh "$@"
 	fi
 }
 
-if [ -f ~/.bashrc.$HOSTNAME ]; then
+if [[ -f ~/.bashrc.$HOSTNAME ]]; then
 	. ~/.bashrc.$HOSTNAME
 fi
