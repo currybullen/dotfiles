@@ -6,7 +6,7 @@ if test "$BASH"; then
 	fi
 
 	appendpath () {
-		if [ ! -e "$1" ]; then
+		if [[ ! -e $1 ]]; then
 			return
 		fi
 
@@ -18,7 +18,7 @@ if test "$BASH"; then
 		esac
 	}
 
-	if [ -f ~/.profile.$HOSTNAME ]; then
+	if [[ -f ~/.profile.$HOSTNAME ]]; then
 		. ~/.profile.$HOSTNAME
 	fi
 
