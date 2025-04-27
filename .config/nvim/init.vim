@@ -96,7 +96,6 @@ set complete-=i " Do not look through included files when completing
 set list
 set listchars=tab:▶‒,trail:-,extends:>,precedes:<,nbsp:+,lead:- " Chars to display when running :list
 setglobal tags-=./tags tags-=./tags; tags^=./tags; " Search upwards for tags file
-set pastetoggle=<F2> " Toggles paste option
 set display+=lastline " @@@ ends long lines
 set viminfo='100,"50 " Keep trak of 100 files for :oldfiles
 let g:vimwiki_list = [{'path': '$HOME/Sync/default/vimwiki', 'diary_caption_level': 2}]
