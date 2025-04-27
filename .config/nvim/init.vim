@@ -19,6 +19,7 @@ Plug 'tpope/vim-commentary'
 Plug 'lambdalisue/suda.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dadbod'
+Plug 'vimpostor/vim-lumen'
 call plug#end()
 
 " Looks
@@ -30,7 +31,6 @@ let g:indentLine_fileTypeExclude = ['help']
 let g:show_spaces_that_precede_tabs = 1
 if $TERM !=# 'linux'
 	colorscheme gruvbox
-	set background=dark
 endif
 
 " Tab behavior
@@ -152,3 +152,7 @@ augroup indentations_per_filetype
 	autocmd FileType vimwiki setlocal ts=2 sw=2 sts=2 expandtab
 	autocmd FileType tf setlocal ts=2 sw=2 sts=2 expandtab
 augroup END
+
+let g:lumen_startup_overwrite = 1
+au User LumenLight let $BAT_THEME="gruvbox-light"
+au User LumenDark let $BAT_THEME="gruvbox-dark"
