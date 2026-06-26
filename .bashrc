@@ -53,6 +53,16 @@ stty -ixon # Disable flow control so it doesn't interfere with C-s
 # Misc
 ###############################################################################
 
+# Use fd for path completion, include hidden
+_fzf_compgen_path() {
+	fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd for dir completion, include hidden
+_fzf_compgen_dir() {
+	fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # Switch term type when SSHing from tmux
 ssh() {
 	if [[ $TERM = tmux-256color ]]; then
