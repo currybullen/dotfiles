@@ -5,11 +5,7 @@ set vi-ins-mode-string "+"
 set vi-cmd-mode-string ":"
 
 # Key bindings
-"\C-e": alias-expand-line
-"\C-p": history-search-backward
-"\C-n": history-search-forward
 "\C-l": clear-screen
-"\el": "ls\n"
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 $if Bash
