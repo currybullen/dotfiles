@@ -1,10 +1,6 @@
 # Basically only env variables and PATH definition goes here
 
 if test "$BASH"; then
-	if [[ "$NAME" == "fedora-toolbox" ]]; then
-		return
-	fi
-
 	appendpath () {
 		if [[ ! -e $1 ]]; then
 			return
@@ -17,10 +13,6 @@ if test "$BASH"; then
 				PATH="${PATH:+$PATH:}$1"
 		esac
 	}
-
-	if [[ -f ~/.profile.$HOSTNAME ]]; then
-		. ~/.profile.$HOSTNAME
-	fi
 
 	export BAT_THEME="ansi"
 	export FZF_COMPLETION_TRIGGER="~~"
