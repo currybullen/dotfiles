@@ -44,3 +44,5 @@
 	prompt = false
 [merge]
 	tool = meld
+[include]
+	path = ~/.gituser
