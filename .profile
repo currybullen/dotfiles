@@ -33,12 +33,14 @@ if test "$BASH"; then
 	export VISUAL="nvim"
 	export EDITOR="$VISUAL"
 	export LESS="--ignore-case --RAW-CONTROL-CHARS"
+	export npm_config_prefix=$HOME/.local
 
 	appendpath "$HOME/.local/bin"
 	appendpath "$HOME/scripts"
 	appendpath "$HOME/IntelliJ/bin"
 	appendpath "$HOME/.cargo/bin"
 	appendpath "$HOME/.cargo/env"
+	appendpath "$HOME/.local/npm/bin"
 
 	case $- in
 		*i*) . ~/.bashrc ;;
